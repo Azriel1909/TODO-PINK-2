@@ -1,0 +1,138 @@
+:root {
+  --background-oscuro: #0f0f0f;
+  --background-blanco: #FFFFFF;
+  --background-ceniza-claro: #F7F4F4;
+  --background-ceniza-medio: #D9D9D9;
+  --color-primario: #ff7396;
+  --button-call: #ff3366;
+  --fuente-ceniza-claro: #666666;
+  --fuente-ceniza-oscuro: #4F4C4C;
+  --planes-color-primario-claro:  #ff809f;
+  --planes-color-secundario: #9875ff;
+  --fuente-enlace: #7598ff;
+  --roboto: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--roboto);
+  font-size: 16px;
+}
+
+main {
+  background: rgb(15,15,15);
+  background: linear-gradient(70deg, rgba(15,15,15,1) 36%, rgba(255,115,150,1) 36%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.mainCard {
+  width: 50vw;
+  border-radius: 25px;
+  background-color: var(--background-blanco);
+  padding: 25px;
+}
+
+.title {
+  font-family: var(--roboto);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 15px;
+}
+
+.title img {
+  width: 100px;
+}
+
+.inputForm {
+  border: none;
+  padding: 10px;
+  border-bottom: 2px solid var(--background-ceniza-medio);
+  outline: none;
+  width: 40%;
+}
+
+.inputForm::placeholder {
+  padding: 0px;
+}
+
+.btnCreate {
+  padding: 10px 15px;
+  background-color: var(--color-primario);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cardsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  max-height: 60vh;
+  height: 60vh;
+}
+
+.card {
+  width: 90%;
+  padding: 19px;
+  box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin: 5px 0px;
+  position: relative;
+}
+
+.task {
+  padding: 10px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: rgba(62, 161, 219, 1);
+}
+
+.completeIcon {
+  color: rgba(62, 161, 219, 1);
+}
+
+.trashIcon:hover {
+  color: #f00;
+}
+
+.deleteConfirmationPop {
+  position: relative;
+  background-color: rgba(255, 255, 255);
+  z-index: 99;
+  width: 100%;
+  top: -100px;
+  left: 0;
+}
+.deleteSpace {
+  position: relative;
+  width: 30%;
+}
+
+.noTasks {
+  font-size: 48px;
+}
