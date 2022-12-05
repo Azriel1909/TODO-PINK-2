@@ -11,6 +11,11 @@ export const agregarTarea = (evento) => {
   const valor = input.value
   const date = calendario.value
   const formatoFecha = moment(date).format('DD/MM/YYYY')
+
+  if (valor == '' || date == '') {
+    return 
+  }
+
   // Nuevo registro, limpiar el input
   input.value = ''
   calendario.value = ''
