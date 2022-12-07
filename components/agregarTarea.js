@@ -1,5 +1,6 @@
 import checkCompletado from './checkCompletado.js'
 import eliminarIcon from './eliminarIcono.js';
+import { desplegarTarea } from './LeerTarea.js';
 
 export const agregarTarea = (evento) => {
   evento.preventDefault();
@@ -24,13 +25,14 @@ export const agregarTarea = (evento) => {
     valor,
     formatoFecha
   }
+
+  lista.innerHTML = ''
   // Almacenamiento del local Storage, parse lo vuelve en un formato de objeto
   const listaDeTarea = JSON.parse(localStorage.getItem('tareas')) || []
   listaDeTarea.push(objetoTarea)
   localStorage.setItem('tareas', JSON.stringify(listaDeTarea))
 
-  const tarea = crearTarea(objetoTarea)
-  lista.appendChild(tarea) 
+  desplegarTarea()
 }
 
 // Recibe un objeto con dos llaves
