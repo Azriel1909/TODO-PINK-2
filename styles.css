@@ -43,6 +43,7 @@ form {
   flex-direction: column;
   background-color: var(--background-blanco);
   padding: 50px;
+  height: 80vh;
 }
 
 .title {
@@ -93,7 +94,7 @@ form {
   justify-content: flex-start;
   overflow-y: scroll;
   max-height: 50vh;
-  height: 40vh;
+  height: 100%;
 }
 
 .card {
