@@ -25,23 +25,24 @@ main {
   background: linear-gradient(70deg, rgba(15,15,15,1) 36%, rgba(255,115,150,1) 36%);
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 form {
   width: 100%;
   justify-content: space-between;
-  align-items: center;
   display: flex;
-  margin-bottom: 15px;
+  flex-direction: column;
+  height: 150px;
+  align-items: center;
 }
 
 .mainCard {
   width: 50vw;
-  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
   background-color: var(--background-blanco);
-  padding: 25px;
+  padding: 50px;
 }
 
 .title {
@@ -53,7 +54,7 @@ form {
 }
 
 .title img {
-  width: 100px;
+  width: 150px;
 }
 
 .inputForm {
@@ -61,7 +62,7 @@ form {
   padding: 10px;
   border-bottom: 2px solid var(--background-ceniza-medio);
   outline: none;
-  width: 40%;
+  width: 90%;
 }
 
 .inputForm::placeholder {
@@ -77,6 +78,13 @@ form {
   cursor: pointer;
 }
 
+.heute {
+  padding: 10px;
+  border: none;
+  background-color: var(--background-ceniza-claro);
+  font-family: var(--roboto);
+}
+
 .cardsList {
   width: 100%;
   display: flex;
@@ -84,13 +92,13 @@ form {
   align-items: center;
   justify-content: flex-start;
   overflow-y: scroll;
-  max-height: 60vh;
-  height: 60vh;
+  max-height: 50vh;
+  height: 40vh;
 }
 
 .card {
   width: 90%;
-  padding: 19px;
+  padding: 20px;
   box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16);
   display: flex;
   flex-direction: row;
@@ -141,4 +149,20 @@ form {
   width: 100%;
   padding: 15px;
   
+}
+
+@media (max-width: 900px) {
+
+  .cardsList {
+    width: 300px;
+    text-align: center;
+  }
+  .mainCard {
+    width: 300px;
+    font-size: small;
+  }
+  main {
+    height: 100vh;
+    background-color: #F7F4F4;
+  }
 }
