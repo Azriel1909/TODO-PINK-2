@@ -13,17 +13,22 @@ export const agregarTarea = (evento) => {
   const date = calendario.value
   const formatoFecha = moment(date).format('DD/MM/YYYY')
 
-  if (valor == '' || date == '') {
+  if (valor === '' || date === '') {
     return 
   }
 
   // Nuevo registro, limpiar el input
-  input.value = ''
-  calendario.value = ''
+  input.valor = '' // or value
+  calendario.valor = '' // or value
+
+  const completar = false // Tarea creada sin completar
+
 
   const objetoTarea = {
     valor,
-    formatoFecha
+    formatoFecha,
+    completar,
+    id: uuid.v4(),
   }
 
   lista.innerHTML = ''
@@ -36,22 +41,27 @@ export const agregarTarea = (evento) => {
 }
 
 // Recibe un objeto con dos llaves
-export const crearTarea = ({ valor, formatoFecha }) => {
+export const crearTarea = ({ valor, formatoFecha, completar, id }) => {
   // Generamos elementos
   const tarea = document.createElement('li')
         tarea.classList.add('card')
-
   const tareaContenido = document.createElement('div') 
+  const check1 = checkCompletado(id)
+  
+  // En caso de que sea verdadero, agregamos las clases.
+  if (completar) {
+    check1.classList.toggle('fas')
+    check1.classList.toggle('completeIcon')
+    check1.classList.toggle('far')
+  }
+
   const tareatitulo = document.createElement('span')
         tareatitulo.classList.add('task')
         tareatitulo.innerText = valor
-        tareaContenido.appendChild(checkCompletado())
+        tareaContenido.appendChild(check1)
         tareaContenido.appendChild(tareatitulo)
   
-  const elementoFecha = document.createElement('span')
-        elementoFecha.innerHTML = formatoFecha 
         tarea.appendChild(tareaContenido)
-        tarea.appendChild(elementoFecha)
-        tarea.appendChild(eliminarIcon())
+        tarea.appendChild(eliminarIcon(id))
   return tarea
 }
